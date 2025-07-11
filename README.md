@@ -1,7 +1,10 @@
-**Disclaimer:** I coded almost everything in the game, from the player to the game manager code. Some of the code used in the player method is reused from a previous project from a course called "Game Dev Rockets". Things like movement, changing the direction the character is facing, and checking if the player is on the ground. However, aside from that, the player code was developed by me with minimal use of ChatGPT to resolve some minor issues. But besides the player code, everything was self-made with only the basic knowledge I learned from 
+**Disclaimer:**
+
+I coded almost everything in the game, from the player to the game manager code. Some of the code used in the player method is reused from a previous project from a course called "Game Dev Rockets". Things like movement, changing the direction the character is facing, and checking if the player is on the ground. However, aside from that, the player code was developed by me with minimal use of ChatGPT to resolve some minor issues. But besides the player code, everything was self-made with only the basic knowledge I learned from 
 the Game Development Course. It's my first personal project in Unity.
 
 **Game Explanation:**
+
 I made a 2D platformer game where a character/player is running on platforms and dodging obstacles with "abilities" or "skills" that can be bought through the "black market." The black market contains two abilities that can be bought when the player has enough coins. First is the dash ability, which allows players to make a fast movement over a short period if "E" is pressed. Then there is a double jump ability that allows you to jump again in the air. The character/player can wall jump only on the platforms with the big walls. I used the box colliders in Unity to check if the player is able to wall jump. I made it so that players are unable to wall jump off the green platforms to make the game harder. There is a purple block that is pushable to help the player get past an obstacle. There were moving platforms that made it harder for players to win the game. Players had to dodge spikes on the floor that would deal damage. If the player is hit by 3 spikes or falls off the platforms they die and lose the game.
 
 **Class Explantions:**
@@ -13,8 +16,10 @@ The **Game Manager** class is used to manage everything in the game. It managed 
 The **other classes** like Pushable block, Spike, and Door, are simple classes that I put on the objects. These classes are used to check if you collide with the object to send to the game manager which allows the game manager to update the events happening in the game.
 
 **Challenge In the Project:**
+
 I had challenges with the inputs from players. The player's movement from left to right is put in the fixedUpdate method. This method made it so that it only runs when you press a key from left to right. This made it hard because the course never taught me the meaning. This challenged me to find a way to prevent the input movements of the player from overriding the movement I want the player to do in the wall jump. When I found a wall jump fix was found, I found that I couldn't move my character because the boolean was kept that the player is wall jumping. Then I figured out a way to change it back, but I had a problem with the timing. It would do the action for one frame, and then after that it wouldnt work. The timing was fixed by the Invoke(), which allows me to call a method after some time to turn off the pre-planned movement while also allowing to player to move after a short period. 
 
 
 **Relations to EE:**
+
 This allow me to further myself in my exploration of Electrical Engineering(EE) because it taught me many similar concepts. A concept it taught me was debugging. Similar to coding, I will be debugging hardware in EE and  has allowed me to develop my problem solving skills while also increasing my mental fortitude when struggling to find solutions. Another concept that this Unity coding project has taught me is the idea of multiple tries and tests before finishing a project. There are many things that needs to be tested to make sure the electrical component works. Lastly, the concept of embedded systems thinking is taught by needing to factor in other sections of code that could prevent the code from working. For example, the challenge from above showed that my code didn't work because the code was influenced to think that it should override the planned movement with the inputs from a person.
